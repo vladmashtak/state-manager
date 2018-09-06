@@ -1,0 +1,229 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$black: #000;
+$white: #fff;
+// My custom primary palette
+$black-87-opacity: rgba(black, 0.87);
+$white-87-opacity: rgba(white, 0.87);
+
+$aqosta-primary: (
+  50 : #e0f2f5,
+  100 : #b3e0e5,
+  200 : #80cbd4,
+  300 : #4db6c3,
+  400 : #26a6b6,
+  500 : #0096a9,
+  600 : #008ea2,
+  700 : #008398,
+  800 : #00798f,
+  900 : #00687e,
+  A100 : #acedff,
+  A200 : #79e2ff,
+  A400 : #46d7ff,
+  A700 : #2cd2ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$aqosta-accent: (
+  50 : #f2f4f5,
+  100 : #dee4e7,
+  200 : #c8d2d7,
+  300 : #b1bfc6,
+  400 : #a1b2ba,
+  500 : #90a4ae,
+  600 : #889ca7,
+  700 : #7d929d,
+  800 : #738994,
+  900 : #617884,
+  A100 : #f6fcff,
+  A200 : #c3eaff,
+  A400 : #90d8ff,
+  A700 : #76cfff,
+
+  gray: rgb(216, 216, 216),
+
+  modal-1: #fafafa,
+  scroll: #b3b3b3,
+  search-background: #fff,
+  inverse: #ffffff,
+  gis: #cdd2d4,
+  dia-black: #000000,
+  dia-white: #ffffff,
+  dia-green: #259292,
+
+  dia-interface-1: #26B040,
+  dia-interface-2: #48B01C,
+  dia-interface-3: #A3892C,
+  dia-interface-4: #BAAF1F,
+  dia-interface-5: #A3892C,
+  dia-interface-6: #A37723,
+  dia-interface-7: #BA6B29,
+  dia-interface-8: #B03732,
+
+  dia-channel-ok: #00dd00,
+  dia-channel-error: #ef0000,
+  dia-channel-warning: #fed513,
+
+  indi-ok: #00dd00,
+  indi-error: #dd0000,
+  indi-warning: #ffe100,
+  indi-nodata: #8c8c8c,
+
+  place-ok: #00dd00,
+  place-error: #ef0000,
+  place-warning: #fed513,
+  place-normal: rgb(0, 150, 169),
+
+  timeline-tx: #29a3b3,
+  timeline-rx: #3A9562,
+
+  background: #fafafa,
+
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+    modal-1: #000000,
+    scroll: #656565,
+    inverse: #000000,
+    gis: #000000
+  )
+);
+
+$aqosta-dark: (
+  50 : #e0e8f6,
+  100 : #b3c7e9,
+  200 : #80a1db,
+  300 : #4d7bcc,
+  400 : #265fc1,
+  500 : #e8e8e8,
+  600 : #003daf,
+  700 : #0034a6,
+  800 : #002c9e,
+  900 : #001e8e,
+  A100 : #bac3ff,
+  A200 : #8797ff,
+  A400 : #546bff,
+  A700 : #3b55ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$aqosta-dark-accent: (
+  50 : #e8e8e8,
+  100 : #c6c6c6,
+  200 : #a1a1a1,
+  300 : #7b7b7b,
+  400 : #5e5e5e,
+  500 : #424242,
+  600 : #3c3c3c,
+  700 : #333333,
+  800 : #212121,
+  900 : #1d1d1d,
+  A100 : #f07878,
+  A200 : #eb4a4a,
+  A400 : #ff0303,
+  A700 : #e90000,
+
+  gray: rgb(84, 84, 84),
+
+  modal-1: #212121,
+  scroll: #656565,
+  search-background: #424242,
+  inverse: #ffffff,
+  gis: #242426,
+  dia-black: #ffffff,
+  dia-white: #000000,
+  dia-green: #259292,
+
+  dia-interface-1: #26B040,
+  dia-interface-2: #48B01C,
+  dia-interface-3: #A3892C,
+  dia-interface-4: #BAAF1F,
+  dia-interface-5: #A3892C,
+  dia-interface-6: #A37723,
+  dia-interface-7: #BA6B29,
+  dia-interface-8: #B03732,
+
+  dia-channel-ok: #00dd00,
+  dia-channel-error: #ef0000,
+  dia-channel-warning: #fed513,
+
+  indi-ok: #00dd00,
+  indi-error: #dd0000,
+  indi-warning: #ffe100,
+  indi-nodata: #8c8c8c,
+
+  place-ok: #00dd00,
+  place-error: #ef0000,
+  place-warning: #fed513,
+  place-normal: rgb(0, 150, 169),
+
+  timeline-tx: #bfceff,
+  timeline-rx: #8B495B,
+
+  background: #303030,
+
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    modal-1: #ffffff,
+    scroll: #d3d3d3,
+    inverse: #000000,
+    gis: #ffffff,
+  )
+);
+

@@ -1,0 +1,48 @@
+@import 'assets/styles/theme-config';
+@import 'assets/styles/override-material/override-material';
+@import 'app/app.theme';
+
+.app-light {
+  $primary: mat-palette($aqosta-primary);
+  $accent: mat-palette($aqosta-accent);
+  $theme: mat-light-theme($primary, $accent);
+
+  @include angular-material-theme($theme);
+  @include override-material($theme);
+  @include app-component($theme);
+}
+
+.app-dark {
+  $primary: mat-palette($aqosta-dark);
+  $accent: mat-palette($aqosta-dark-accent);
+  $dark-theme: mat-dark-theme($primary, $accent);
+
+  @include angular-material-theme($dark-theme);
+  @include override-material($dark-theme);
+  @include app-component($dark-theme);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.fill-remaining-space {
+  // This fills the remaining space, by using flexbox.
+  // Every toolbar row uses a flexbox row layout.
+  flex: 1 1 auto;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}

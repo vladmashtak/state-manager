@@ -29,9 +29,10 @@ export class TodoListService {
 
   public removeTodo(index: number): void {
     this.todoList.updateState((state: TodoList) => {
-      state.splice(index, 1);
+      const newState: TodoList = [...state];
+      newState.splice(index, 1);
 
-      return [...state];
+      return newState;
     });
   }
 }

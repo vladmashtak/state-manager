@@ -2,19 +2,36 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TodoListService } from './store/store-service/todo-list.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from './store/store.module';
+import { ApiModule } from './api/api.module';
+import { GisComponent } from './pages/gis/gis.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './routes/app-routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material';
+import { ComponentsModule } from './components/components.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GisComponent,
+    PageNotFoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
+    BrowserAnimationsModule,
+    StoreModule,
+    MatToolbarModule,
+    ApiModule,
+    RouterModule.forRoot(routes),
+    ComponentsModule
   ],
-  providers: [TodoListService],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

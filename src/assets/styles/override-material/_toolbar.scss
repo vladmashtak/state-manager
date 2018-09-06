@@ -1,0 +1,10 @@
+@mixin override-toolbar($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  mat-toolbar,
+  .mat-toolbar-row {
+    min-height: 37px;
+    height: 37px;
+  }
+}

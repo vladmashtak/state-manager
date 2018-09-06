@@ -1,4 +1,4 @@
-import {BehaviorSubject, Observable, Subscription} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 type StateFunction<T> = (T) => T;
 
@@ -15,7 +15,7 @@ export class EntityState<T extends Object> extends Observable<T> {
   }
 
   public updateState(update: T | StateFunction<T>): void {
-    const oldState: any = this.stateBehavior.getValue();
+    const oldState: any = Object.freeze(this.stateBehavior.getValue());
     const newState: any = typeof update === 'function' ? update(oldState) : update;
 
     if (typeof newState !== 'object') {
@@ -23,14 +23,23 @@ export class EntityState<T extends Object> extends Observable<T> {
       return;
     }
 
+    if (oldState.constructor !== newState.constructor) {
+      this.stateBehavior.error(new Error('Type of old state and new state must be equal'));
+      return;
+    }
+
     this.stateBehavior.next(newState);
   }
 
-  /*ToDo override subscribe*/
-/*
-  public subscribe(next?: (value: T) => void, error?: (error: any) => void, complete?: () => void): Subscription {
-    return this.stateBehavior
-      .pipe(distinctUntilChanged())
-      .subscribe(next, error, complete);
-  }*/
+  private deepFreeze(object: any): T {
+    Object.getOwnPropertyNames(object).forEach(name => {
+      const prop = object[name];
+
+      if (prop && typeof prop === 'object') {
+        this.deepFreeze(prop);
+      }
+    });
+
+    return Object.freeze(object);
+  }
 }

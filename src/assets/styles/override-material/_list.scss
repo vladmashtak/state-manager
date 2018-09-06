@@ -1,0 +1,17 @@
+@mixin override-list($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .mat-list-item.selected {
+    background-color: mat-color($primary, 200);
+    color: mat-contrast($primary, 200);
+  }
+
+  .mat-list-item:hover:not(.selected) {
+    background-color: mat-color($primary, 100);
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+}

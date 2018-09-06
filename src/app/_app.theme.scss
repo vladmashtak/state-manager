@@ -1,0 +1,42 @@
+@mixin app-component($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: mat-color($accent, 'scroll');
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+
+  /* scrollbar for app */
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+
+  ::-webkit-scrollbar-track {
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    //border-radius: 10px;
+  }
+
+  .mat-manage-menu {
+    .mat-menu-content {
+      background: mat-color($primary);
+      color: mat-contrast($primary, 500);
+      .mat-menu-item {
+        color: mat-contrast($primary, 500);
+        &[disabled] {
+          text-transform: lowercase;
+        }
+
+        .mat-icon {
+          color: mat-contrast($primary, 500);
+        }
+      }
+    }
+  }
+
+  .mat-sidenav-container {
+    width: 100%;
+  }
+}

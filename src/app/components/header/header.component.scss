@@ -1,0 +1,56 @@
+/* set icon size */
+@mixin md-icon-size($size, $fsize) {
+    height: $size;
+    width: $size;
+    line-height: $size;
+    font-size: $fsize;
+}
+
+:host {
+    display: flex;
+    width: 100%;
+    height: 37px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+        @include md-icon-size(37px, 25px);
+    }
+
+    .logo {
+        display: inline-flex;
+        cursor: pointer;
+        align-items: baseline;
+    }
+
+    .client-name {
+        font-size: 20px;
+        margin-right: 10px;
+        span {
+            font-size: 27px;
+        }
+    }
+
+    .client-name,
+    .client-type {
+        letter-spacing: 0;
+    }
+
+    .client-type {
+        height: 20px;
+        text-transform: lowercase;
+        font-size: 14px;
+    }
+
+    .client-release{
+        padding-left: 3px;
+        span{
+            vertical-align: super;
+            font-size: 12px;
+        }
+    }
+
+}
